@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html >
+<head> 
+<!-- Styling using CSS -->
+<style>
+	label{
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px;
+	  display: inline-block;
+	  border: 1px solid rgb(8, 1, 1);
+	  border-radius: 10px;
+	  box-sizing: border-box;
+	  background: rgb(219, 196, 132);
+    	}
+
+	select{
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px;
+		display: inline-block;
+		border: 1px solid rgb(8, 1, 1);
+		border-radius: 10px;
+		box-sizing: border-box;
+		background: rgb(245, 234, 205);
+	}
+
+	input[type=text], select {
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px;
+		display: inline-block;
+		border: 1px solid rgb(8, 7, 7);
+		border-radius: 10px;
+		box-sizing: border-box;
+	  }
+
+	  button[type=submit] {
+		width: 100%;
+		background-color: #d65927;
+		color: white;
+		padding: 14px 20px;
+		margin: 8px ;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	  }
+	  input[type=reset] {
+		width: 100%;
+		background-color: #d65927;
+		color: white;
+		padding: 14px 20px;
+		margin: 8px ;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	  }
+
+</style>
+
+
+
+</head>
+
+<body style="background-color:rgb(247, 244, 241);">
+
+	<h1>Credit card Approval Prediction</h1>
+
+    <form action="{{ url_for('predict')}}" method="post">
+    	<label for="Gender">Gender</label>
+		<select id="Gender" name="Gender">
+		  <option value="1">Male</option>
+		  <option value="0">Female</option>
+		</select>	
+	<br>	
+		<label for="Car">Own a Car</label>
+		<select id="Car" name="Car">
+		  <option value="1">Yes</option>
+		  <option value="0">No</option>
+		</select>		
+	<br>	
+		<label for="Property">Own a Property</label>
+		<select id="Property" name="Property">
+		  <option value="1">Yes</option>
+		  <option value="0">No</option>
+		</select>			
+	<br>
+		<label for="Children">Children</label>
+    	<input type="text" name="Children" placeholder="No of Children" required="required" />
+	<br>
+		<label for="Income">Income</label>	
+        <input type="text" name="Income" placeholder="Annual Income in RS" required="required" />
+	<br>	
+		<label for="Income_Type">Type of Income</label>
+		<select id="Income_Type" name="Income_Type">
+		  <option value="0">Commercial associate</option>
+		  <option value="1">Pensioner</option>
+		  <option value="2">State servant</option>
+		  <option value="3">Student</option>
+		  <option value="4">Working</option>		  
+		</select>			
+    <br>	
+		<label for="Education_Type">Type of Education</label>
+		<select id="Education_Type" name="Education_Type">
+		  <option value="0">Academic degree</option>
+		  <option value="1">Higher education</option>
+		  <option value="2">Incomplete higher</option>
+		  <option value="3">Lower secondary</option>
+		  <option value="4">Secondary / secondary special</option>		  
+		</select>	
+    <br>	
+		<label for="Family_Status">Family Status</label>
+		<select id="Family_Status" name="Family_Status">
+		  <option value="0">Civil marriage</option>
+		  <option value="1">Married</option>
+		  <option value="2">Separated</option>
+		  <option value="3">Single / not married</option>
+		  <option value="4">Widow</option>		  
+		</select>	
+    <br>	
+		<label for="Housing_Type">Housing_Type</label>
+		<select id="Housing_Type" name="Housing_Type">
+		  <option value="0">Co-op apartment</option>
+		  <option value="1">House / apartment</option>
+		  <option value="2">Municipal apartment</option>
+		  <option value="3">Rented apartment</option>
+		  <option value="4">With parents</option>		  
+		</select>
+    <br>
+		<label for="Age">Age</label>		
+    	<input type="text" name="Age" placeholder="Age in Years" required="required" />
+	<br>
+		<label for="Employed">Employed</label>		
+        <input type="text" name="Employed" placeholder="No of Years Employed" required="required" />
+	<br>
+		<label for="Family_Members">Family_Members</label>		
+		<input type="text" name="Family_Members" placeholder="No of Family Members" required="required" />
+	<br>
+	<br>
+	<hr>
+	<br>  
+	    <input type="reset" value="Reset">    
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   <b>{{ prediction_text }}</b>
+
+
+ </div>
+
+
+</body>
+</html>
