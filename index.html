@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Card Approval Predictor</title>
+
+</head>
+<body>
+    <div style="color:rgb(15, 15, 15);" class="container">
+        <h2 class='container-heading'><span class="heading_font">Predicting Credit Card Approval </span></h2>
+    </div>
+<br>
+    <div style="color:rgb(15, 15, 15);" class="ml-container">
+		<form action="{{ url_for('predict')}}" method="post">
+			<label for="Gender">Gender</label>
+			<select id="Gender" name="Gender">
+			  <option value="1">Male</option>
+			  <option value="0">Female</option>
+			</select>	
+		<br>
+		<br>
+		<br>	
+			<label for="Car">Own a Car</label>
+			<select id="Car" name="Car">
+			  <option value="1">Yes</option>
+			  <option value="0">No</option>
+			</select>		
+		<br>
+		<br>	
+		<br>
+			<label for="Property">Own a Property</label>
+			<select id="Property" name="Property">
+			  <option value="1">Yes</option>
+			  <option value="0">No</option>
+			</select>			
+		<br>
+		<br>
+		<br>
+			<label for="Children">Children</label>
+			<input type="text" name="Children" placeholder="No of Children" required="required" />
+		<br>
+		<br>
+		<br>
+			<label for="Income">Income</label>	
+			<input type="text" name="Income" placeholder="Annual Income in RS" required="required" />
+		<br>
+		<br>	
+		<br>
+			<label for="Income_Type">Type of Income</label>
+			<select id="Income_Type" name="Income_Type">
+			  <option value="0">Commercial associate</option>
+			  <option value="1">Pensioner</option>
+			  <option value="2">State servant</option>
+			  <option value="3">Student</option>
+			  <option value="4">Working</option>		  
+			</select>			
+		<br>	
+		<br>
+		<br>
+			<label for="Education_Type">Type of Education</label>
+			<select id="Education_Type" name="Education_Type">
+			  <option value="0">Academic degree</option>
+			  <option value="1">Higher education</option>
+			  <option value="2">Incomplete higher</option>
+			  <option value="3">Lower secondary</option>
+			  <option value="4">Secondary / secondary special</option>		  
+			</select>	
+		<br>
+		<br>
+		<br>	
+			<label for="Family_Status">Family Status</label>
+			<select id="Family_Status" name="Family_Status">
+			  <option value="0">Civil marriage</option>
+			  <option value="1">Married</option>
+			  <option value="2">Separated</option>
+			  <option value="3">Single / not married</option>
+			  <option value="4">Widow</option>		  
+			</select>	
+		<br>	
+		<br>
+		<br>
+		
+
+			<label for="Housing_Type">Housing_Type</label>
+			<select id="Housing_Type" name="Housing_Type">
+			  <option value="0">Co-op apartment</option>
+			  <option value="1">House / apartment</option>
+			  <option value="2">Municipal apartment</option>
+			  <option value="3">Rented apartment</option>
+			  <option value="4">With parents</option>		  
+			</select>
+		<br>
+		<br>
+		<br>
+			<label for="Age">Age</label>		
+			<input type="text" name="Age" placeholder="Age in Years" required="required" />
+		<br>
+		<br>
+		<br>
+			<label for="Employed">Employed</label>		
+			<input type="text" name="Employed" placeholder="No of Years Employed" required="required" />
+		<br>
+		<br>
+		<br>
+			<label for="Family_Members">Family_Members</label>		
+			<input type="text" name="Family_Members" placeholder="No of Family Members" required="required" />
+		<br>
+		<br>
+		<hr>
+		<br>  
+			<input type="reset" value="Reset">    
+			<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+		</form>
+
+	<br>
+	<br>
+	<div style="color:rgb(5, 5, 5);">
+	<h2>{{ prediction_text }}</h2>
+	
+</div>
+	<br>
+	
+
+<style>
+
+/* Background Image */
+body
+{
+background-image:url("https://media.istockphoto.com/vectors/financial-transactions-deposit-with-bank-cartoon-vector-id1159996731?k=20&m=1159996731&s=612x612&w=0&h=-Moww0qbSy9UYenBNMq4kg5UqvyEyeyzHPeHQQhSEyk=");
+height: 100%;
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+
+}
+
+/* Color */
+body{
+	font-family: Arial, Helvetica,sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+
+/* Heading Font */
+.container-heading{
+    margin: 0;
+}
+
+.heading_font{
+    color: rgb(8, 8, 8);
+	font-family: 'Pacifico', cursive;
+	font-size: 50px;
+	font-weight: normal;
+}
+
+
+
+/* Box */
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            width: 100px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            width: 120px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            width: 140px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            width: 80px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #fifth {
+            border-radius: 14px;
+            height: 25px;
+            width: 160px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #sixth {
+            border-radius: 14px;
+            height: 25px;
+            width: 140px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+
+
+/* Submit Button */
+#sub {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+
+
+
+
+</style>
+
+
+</body>
+
+</html>
