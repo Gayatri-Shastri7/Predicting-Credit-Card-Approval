@@ -8,3 +8,5 @@
 <h3>5. STREAMLIT</h3>
 <h3>6. TABLEAU</h3>
 
+# Presentation:
+https://docs.google.com/presentation/d/1YYjRG5qif9nXAUmHeNxy--hsLqHgoRubJVespJwXyio/edit?usp=sharing 
